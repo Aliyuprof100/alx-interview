@@ -1,18 +1,17 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """This is the header of the file""""
 
 
 def rotate_2d_matrix(matrix):
+    """ Given an n x n 2D matrix, rotate it 90 degrees clockwise
     """
-    Rotates a 2D matrix 90 degrees clockwise in-place.
+    for x, y in enumerate(zip(*reversed(matrix))):
+        matrix[x] = list(y)
 
-    Parameters:
-        matrix (list[list[int]]): the 2D matrix to be rotated.
 
-    Returns:
-        None
-    """
-    matrix.reverse()
-    for i in range(len(matrix)):
-        for j in range(i):
-            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+if __name__ == '__main__':
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+    """ rotate_2d_matrix(matrix) """
+    rotate_2d_matrix(matrix)
+    print(matrix)
