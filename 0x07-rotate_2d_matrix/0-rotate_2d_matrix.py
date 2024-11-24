@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-"""This is the header of the file""""
+"""
+2D Matrix rotation
+Matrix transposition approach
+"""
 
 
 def rotate_2d_matrix(matrix):
-    """ Given an n x n 2D matrix, rotate it 90 degrees clockwise
+    """ Rotates n x n 2D matrix 90 decrease clockwise
+        in place
+        Args:
+            - matrix - 2D matrix
     """
-    n = len(matrix)
-    for i in range(n):
-        for j in range(i + 1, n):
+    matrix.reverse()
+    m_len = len(matrix)
+    for i in range(m_len):
+        for j in range(i):
             matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-    for i in range(n):
-        matrix[i].reverse()
