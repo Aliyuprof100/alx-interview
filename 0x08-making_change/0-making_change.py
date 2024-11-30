@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+""" solving making chane problem """
 
 
 def makeChange(coins, total):
+    """ Functions that solve the problem """
     # If total is 0 or less, return 0 as no coins are needed
     if total <= 0:
         return 0
